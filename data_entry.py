@@ -10,6 +10,7 @@ def get_date(prompt, allow_default=False):
 
     try:
         valid_date = datetime.strptime(date_str, "%d-%m-%y")
+        return valid_date.strftime("%d-%m-%y")
     except ValueError:
         print("Invalid date format. Please enter date in dd-mm-yyyy format.")
         return get_date(prompt, allow_default)
@@ -33,7 +34,3 @@ def get_category():
 
 def get_description():
     return input("Enter description : ")
-
-
-
-

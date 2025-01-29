@@ -6,3 +6,5 @@ date,amount,category,description
 2025-01-27,1000,Grocery,Food Items
 28-01-25,20000.0,"{'I', 'E'}",Personal
 28-01-25,1000.0,Income,misc
+29-01-25,5000.0,Expense,miscellenious
+01-01-25,1000.0,Income,Interest
