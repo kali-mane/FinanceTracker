@@ -44,7 +44,21 @@ class CSV:
             print("No transactions found for the given date range")
         else:
             filtered_df = filtered_df.sort_values(by=['date'])
-            print(filtered_df)
+            print(f"Transactions for the given date range {start_date} & {end_date}")
+
+            print(
+                filtered_df.to_string(index=False, formatters={"date": lambda x: x.strftime(CSV.FORMAT)})
+            )
+            total_income = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
+            total_expenses = filtered_df[filtered_df["category"] != "Income"]["amount"].sum()
+
+            print("\nSummary :", )
+            print("Total Income   : ", total_income)
+            print("Total Expenses : ", total_expenses)
+            print(f"Net Savings   : ${(total_income - total_expenses):.2f}")
+            print("\n")
+
+
 
 
 def add():
